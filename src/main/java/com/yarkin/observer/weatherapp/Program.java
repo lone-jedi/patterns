@@ -3,6 +3,7 @@ package com.yarkin.observer.weatherapp;
 import com.yarkin.observer.weatherapp.models.WeatherData;
 import com.yarkin.observer.weatherapp.views.CurrentConditionsDisplay;
 import com.yarkin.observer.weatherapp.views.ForecastDisplay;
+import com.yarkin.observer.weatherapp.views.HeatIndexDisplay;
 import com.yarkin.observer.weatherapp.views.StatisticsDisplay;
 
 import java.util.Random;
@@ -15,6 +16,7 @@ public class Program {
         var currentConditionsDisplay = new CurrentConditionsDisplay(weatherData);
         var forecastDisplay = new ForecastDisplay(weatherData);
         var statisticsDisplay = new StatisticsDisplay(weatherData);
+        var heatIndexDisplay = new HeatIndexDisplay(weatherData);
 
 //        weatherData.registerObserver(currentConditionsDisplay);
 //        weatherData.registerObserver(forecastDisplay);
