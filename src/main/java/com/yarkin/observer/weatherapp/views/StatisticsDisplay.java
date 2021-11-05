@@ -20,6 +20,12 @@ public class StatisticsDisplay implements Observer, DisplayElement {
 
     @Override
     public void display() {
+        System.out.printf("Statistic - max:%f, min:%f, avg:%f\n",
+                maxTemperature, minTemperature, avgTemperature);
+    }
+
+    @Override
+    public void update() {
         double temperature = weatherData.getTemperature();
 
         if(maxTemperature < temperature) {
@@ -32,14 +38,8 @@ public class StatisticsDisplay implements Observer, DisplayElement {
 
         lastSumOfElements += temperature;
         numberOfUpdates++;
-
         avgTemperature = lastSumOfElements / numberOfUpdates;
 
-        System.out.printf("Statistic - max:%f, min:%f, avg:%f\n", maxTemperature, minTemperature, avgTemperature);
-    }
-
-    @Override
-    public void update() {
         display();
     }
 }
