@@ -46,7 +46,7 @@ public class WeatherData implements Subject {
         return humidity;
     }
 
-    static public double computeHeatIndex(double temperature, double humidity) {
+    public double computeHeatIndex() {
         double rh = humidity;
         double t = temperature;
         double index = (double)((16.923 + (0.185212 * t) + (5.37941 * rh) - (0.100254 * t * rh) +
