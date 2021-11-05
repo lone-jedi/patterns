@@ -5,13 +5,21 @@ import com.yarkin.observer.weatherapp.Observer;
 import com.yarkin.observer.weatherapp.models.WeatherData;
 
 public class CurrentConditionsDisplay implements Observer, DisplayElement {
-    @Override
-    public void display() {
+    private WeatherData weatherData;
 
+    public CurrentConditionsDisplay(WeatherData weatherData) {
+        this.weatherData = weatherData;
+        weatherData.registerObserver(this);
     }
 
     @Override
-    public void update(WeatherData weatherData) {
+    public void display() {
+        System.out.printf("Current condition - temperature:%f, pressure:%f, humidity:%f\n",
+                weatherData.getTemperature(), weatherData.getPressure(), weatherData.getHumidity());
+    }
 
+    @Override
+    public void update() {
+        display();
     }
 }
