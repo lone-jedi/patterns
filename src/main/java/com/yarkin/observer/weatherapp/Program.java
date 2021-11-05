@@ -28,7 +28,7 @@ public class Program {
                     random.nextInt(20) + 750,
                     random.nextInt(100));
             System.out.println();
-            Thread.sleep(20);
+            Thread.sleep(1000);
         }
 
     }
